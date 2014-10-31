@@ -16,7 +16,8 @@ namespace CMWork
 
             for (var i = from; i <= to; i++)
             {
-                var wordsToPrint = numbersWords.Keys.Where(key => key != 0).Where(key => (i%key == 0)).Aggregate(String.Empty, (current, key) => current + numbersWords[key]);
+
+                var wordsToPrint = numbersWords == null ? String.Empty : numbersWords.Keys.Where(key => key != 0).Where(key => (i % key == 0)).Aggregate(String.Empty, (current, key) => current + numbersWords[key]);
                 Console.WriteLine("{0}{1}", i, wordsToPrint);
             }
             return true;
